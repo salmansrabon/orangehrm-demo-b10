@@ -1,7 +1,9 @@
 package testrunner;
 
 import com.github.javafaker.Faker;
+import config.EmployeeModel;
 import config.Setup;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +13,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.PIMPage;
+import utils.Utils;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class PIMTestRunner extends Setup {
@@ -22,7 +26,7 @@ public class PIMTestRunner extends Setup {
     }
 
     @Test(priority = 1)
-    public void createUser() throws InterruptedException {
+    public void createUser() throws InterruptedException, IOException, ParseException {
         PIMPage pimPage=new PIMPage(driver);
         Faker faker=new Faker();
         String firstName=faker.name().firstName();
@@ -37,5 +41,12 @@ public class PIMTestRunner extends Setup {
         String textActual= headerElement.getText();
         String textExpected="Personal Details";
         Assert.assertEquals(textActual,textExpected);
+
+        EmployeeModel employeeModel=new EmployeeModel();
+        employeeModel.setFirstName(firstName);
+        employeeModel.setLastName(lastName);
+        employeeModel.setUsername(username);
+        employeeModel.setPassword(password);
+        Utils.saveUsers(employeeModel);
     }
 }

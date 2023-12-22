@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="Orange HRM portal automation">
+    <test name="Admin Login">
+        <classes>
+            <class name="testrunner.LoginTestRunner"/>
+        </classes>
+    </test>
+    <test name="Create new user">
+        <classes>
+            <class name="testrunner.PIMTestRunner"/>
+        </classes>
+    </test>
+    <test name="New user login">
+        <classes>
+            <class name="testrunner.UserTestRunner"/>
+        </classes>
+    </test>
+</suite>

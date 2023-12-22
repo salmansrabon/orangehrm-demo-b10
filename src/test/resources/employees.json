@@ -1,0 +1,30 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123"
+  },
+  {
+    "firstName": "Jamal",
+    "lastName": "Kudu",
+    "password": "1234",
+    "username": "kudu"
+  },
+  {
+    "firstName": "Francene",
+    "lastName": "Harvey",
+    "password": "P@ssword123",
+    "username": "carlotta.sipes"
+  },
+  {
+    "firstName": "Leonarda",
+    "lastName": "Kautzer",
+    "password": "P@ssword123",
+    "username": "wenona.purdy"
+  },
+  {
+    "firstName": "Zenia",
+    "lastName": "Rowe",
+    "password": "P@ssword123",
+    "username": "cyndy.orn"
+  }
+]
